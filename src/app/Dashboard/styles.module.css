@@ -40,7 +40,7 @@
   overflow-x: auto;
 }
 
-.arrival_table {
+.scroll table {
   width: 100%;
   border-collapse: collapse;
 }

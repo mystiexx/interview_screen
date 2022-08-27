@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image,  } from "@chakra-ui/react";
 import ArrowDoubleLeft from "../../assets/icons/ArrowDoubleLeft";
 import logo from "../../assets/images/Logo.png";
 import { NavLink, useLocation } from "react-router-dom";
@@ -19,7 +19,7 @@ const SideBar = () => {
 
   return (
     <div>
-      <Box position="relative" bg="#1E1E2D" color="#888C9F" h="100vh">
+      <Box position="relative" bg="#1E1E2D" color="#888C9F" h="150vh">
         <Box pt="14px" pb={"20px"} bg="#1B1B28" pl="27px" pr={"25px"}>
           <Flex
             placeItems={"none"}

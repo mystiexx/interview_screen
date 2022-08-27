@@ -29,6 +29,7 @@ const Reports = () => {
           pr="29px"
           pt="23px"
           pb="23px"
+          w='372px'
         >
           <Flex
             justifyContent={"space-between"}
@@ -115,7 +116,9 @@ const Reports = () => {
           </Flex>
           <Box mt="24px">
             <div className={styles.scroll}>
+
               <table className={styles.arrival_table}>
+                
                 <tbody>
                   {new_arrivals.map((arrival) => (
                     <tr key={arrival.id}>

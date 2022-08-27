@@ -50,6 +50,7 @@ const TopSection = () => {
               pt="30px"
               pl="30px"
               pr="29px"
+              w='auto'
             >
               <Flex
                 justifyContent="space-between"
