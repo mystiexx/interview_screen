@@ -1,26 +1,26 @@
-import React, { useState, useRef } from "react";
+import React, {useRef, useState } from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import ArrowDoubleLeft from "../../assets/icons/ArrowDoubleLeft";
 import logo from "../../assets/images/Logo.png";
 import { NavLink, useLocation } from "react-router-dom";
-import { routes } from "./routes";
-import styles from "./styles.module.css";
+import { routes } from "../SideBar/routes";
+import styles from "../SideBar/styles.module.css";
 import CheveronRight from "../../assets/icons/CheveronRight";
 import ChevronDown from "../../assets/icons/ChevronDown";
 
-const SideBar = () => {
+const Mobile = ({toggle}) => {
   const [show, setShow] = useState(false);
   const content = useRef(null);
   const location = useLocation();
 
-  const toggle = () => {
+  const Show = () => {
     setShow(!show);
+    toggle()
   };
 
   return (
     <div>
-     
-      <Box>
+      <Box bg='#1e1e2d' h='100vh' onClick={toggle}>
         <Box pt="14px" pb={"20px"} bg="#1B1B28" pl="27px" pr={"25px"}>
           <Flex
             placeItems={"none"}
@@ -29,7 +29,7 @@ const SideBar = () => {
             alignContent="center"
           >
             <Image src={logo} alt="logo" />
-            <Box cursor="pointer">
+            <Box cursor="pointer" onClick={toggle}>
               <ArrowDoubleLeft />
             </Box>
           </Flex>
@@ -41,7 +41,7 @@ const SideBar = () => {
               <>
                 <NavLink
                   to={route.link}
-                  onClick={route?.sub_routes && toggle}
+                  onClick={route?.sub_routes && Show }
                   className={({ isActive }) =>
                     isActive ? styles.accordion_active : styles.accordion
                   }
@@ -90,4 +90,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Mobile;

@@ -1,39 +1,28 @@
-import React from "react";
-import { Box, Grid, useMediaQuery } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box } from "@chakra-ui/react";
 import NavBar from "../components/Navbar";
 import SideBar from "../components/SideBar";
+import styles from "./styles.module.css";
 
 const Layout = ({ children }) => {
-  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+  const [show, setShow] = useState(true);
+
+  const onOpen = () => {
+    setShow(!show);
+  };
 
   return (
     <div>
       <Box>
-        {isNotSmallerScreen ? (
-          <Grid templateColumns={"265px auto"}>
-            <Box>
-              <SideBar />
-            </Box>
-            <Box w="auto">
-              <NavBar />
-              <Box h={"100vh"} overflowY={"scroll"} bg="#EEF0F8">
-                {children}
-              </Box>
-            </Box>
-          </Grid>
-        ) : (
-          <Box>
-            {" "}
-            <NavBar />
-            <Box
-              h={isNotSmallerScreen ? "100vh" : "auto"}
-              overflowY={"scroll"}
-              bg="#EEF0F8"
-            >
-              {children}
-            </Box>{" "}
-          </Box>
-        )}
+        <div className={styles.container}>
+          <div className={styles.menu}>
+            <SideBar />
+          </div>
+          <div className={styles.interface}>
+            <NavBar onOpen={onOpen} />
+            <div className={styles.interface_content}>{children}</div>
+          </div>
+        </div>
       </Box>
     </div>
   );

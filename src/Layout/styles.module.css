@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+}
+
+.menu {
+  background: #1e1e2d;
+  color: #888c9f;
+  width: 265px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.interface {
+  width: calc(100% - 265px);
+  margin-left: 265px;
+  position: relative;
+}
+
+.interface_content {
+  background: #eef0f8;
+}
+
+@media (max-width: 769px) {
+  .menu {
+    width: 265px;
+    position: fixed;
+    left: -500px;
+  }
+
+  .menu_active {
+    background: #1e1e2d;
+    color: #888c9f;
+    left: 0px;
+    width: 265px;
+  }
+
+  .menu_active~.interface {
+    width: calc(100% - 265px);
+    margin-left: 0px;
+  }
+
+  .interface {
+    width: 100%;
+    margin-left: 0px;
+    display: inline-block;
+  }
+}

@@ -10,13 +10,14 @@ const Float = () => {
     <div>
       <Box
         bg="#fff"
-        position="absolute"
+        position="fixed"
         right="0"
         top="30%"
         pt="10px"
         pb="10px"
         pl="7px"
         pr="9px"
+       
         boxShadow={"-25px 0px 30px rgba(0, 0, 0, 0.02);"}
       >
         <Box
@@ -26,6 +27,7 @@ const Float = () => {
           placeItems="center"
           p="6px"
           mb="10px"
+          cursor="pointer"
         >
           <Drop />
         </Box>
@@ -36,6 +38,7 @@ const Float = () => {
           placeItems="center"
           p="6px"
           mb="10px"
+          cursor="pointer"
         >
           <FloatSettings />
         </Box>
@@ -46,6 +49,7 @@ const Float = () => {
           placeItems="center"
           p="6px"
           mb="10px"
+          cursor="pointer"
         >
           <Telegram />
         </Box>
@@ -55,6 +59,7 @@ const Float = () => {
           display="grid"
           placeItems="center"
           p="6px"
+          cursor="pointer"
         >
           <Chat />
         </Box>

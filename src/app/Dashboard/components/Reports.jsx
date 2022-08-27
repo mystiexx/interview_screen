@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Box, Text, Flex, Grid, Image, useMediaQuery } from "@chakra-ui/react";
+import { Box, Text, Flex,  Image, useMediaQuery } from "@chakra-ui/react";
 import { new_arrivals, sales_progress } from "../data";
-import styles from "../styles.module.css";
 import Badge from "../../../components/Badge";
 import Collections from "../../../assets/icons/Collections";
 import Write from "../../../assets/icons/Write";
 import Trash from "../../../assets/icons/Trash";
 import Dots from "../../../assets/icons/Dots";
+import { Table, Tbody, Tr, Td, TableContainer } from "@chakra-ui/react";
 
 const time = ["month", "week", "day"];
 
@@ -16,11 +16,7 @@ const Reports = () => {
 
   return (
     <div>
-      <Grid
-        templateColumns={isNotSmallerScreen ? "372px auto" : "auto"}
-        gap={6}
-        mt="30px"
-      >
+      <Flex flexDirection={isNotSmallerScreen ? "row" : "column"} mt="30px">
         {/* sales progress card */}
         <Box
           bg="#FFFFFF"
@@ -29,7 +25,8 @@ const Reports = () => {
           pr="29px"
           pt="23px"
           pb="23px"
-          w='372px'
+          w={isNotSmallerScreen ? "372px" : "100%"}
+          mr="30px"
         >
           <Flex
             justifyContent={"space-between"}
@@ -78,13 +75,17 @@ const Reports = () => {
           pr="29px"
           pt="23px"
           pb="33px"
+          mt={isNotSmallerScreen ? null : '24px'}
+          w={isNotSmallerScreen ? "auto" : "100%"}
         >
           <Flex
             justifyContent="space-between"
             alignContent="center"
             alignItems="center"
+            w="100%"
+            flexDirection={isNotSmallerScreen ? "row" : "column"}
           >
-            <Box>
+            <Box w="100%">
               <Text color="#212121" fontSize="18px" fontWeight="500">
                 New Arrivals
               </Text>
@@ -92,7 +93,13 @@ const Reports = () => {
                 More than 400+ new members
               </Text>
             </Box>
-            <Flex alignItems="center" alignContent="center">
+            <Flex
+              justifyContent={isNotSmallerScreen ? "flex-end" : null}
+              alignItems="center"
+              alignContent="center"
+              w="100%"
+              mt={isNotSmallerScreen ? null : "20px"}
+            >
               {time.map((time, id) => (
                 <Box
                   key={id}
@@ -115,33 +122,31 @@ const Reports = () => {
             </Flex>
           </Flex>
           <Box mt="24px">
-            <div className={styles.scroll}>
-
-              <table className={styles.arrival_table}>
-                
-                <tbody>
+            <TableContainer
+              overflowX="auto"
+              w={isNotSmallerScreen ? "auto" : "372px"}
+            >
+              <Table variant="unstyled">
+                <Tbody>
                   {new_arrivals.map((arrival) => (
-                    <tr key={arrival.id}>
-                      <td>
+                    <Tr key={arrival.id}>
+                      <Td>
                         <Flex>
                           <Box
+                            mr="15px"
+                            ml="-20px"
                             bg="#F3F6F9"
-                            p="4px"
-                            borderRadius="6px"
-                            w="auto"
+                            w="50px"
                             h="50px"
+                            borderRadius="6px"
                             display="flex"
-                            placeItems="center"
+                            justifyContent="center"
+                            alignContent="center"
+                            alignItems="center"
                           >
-                            <Image
-                              w="100%"
-                              h="auto"
-                              borderRadius="6px"
-                              src={arrival.image}
-                              alt="people"
-                            />
+                            <Image src={arrival.image} alt="stuff" />
                           </Box>
-                          <Box ml="15px">
+                          <Box>
                             <Text
                               fontSize="14px"
                               fontWeight="600"
@@ -154,13 +159,13 @@ const Reports = () => {
                               fontSize="13px"
                               fontWeight="500"
                             >
-                              <strong style={{ color: "#464E5F" }}>FTP:</strong>{" "}
+                              <strong style={{ color: "#464E5F" }}>FTP:</strong>
                               {arrival.email}
                             </Text>
                           </Box>
                         </Flex>
-                      </td>
-                      <td>
+                      </Td>
+                      <Td>
                         <Text
                           fontSize="14px"
                           fontWeight="600"
@@ -178,9 +183,9 @@ const Reports = () => {
                         >
                           {arrival.price.status}
                         </Text>
-                      </td>
-                      <td>
-                        <Box ml="50px">
+                      </Td>
+                      <Td>
+                        <Box>
                           {arrival.status === "in progress" ? (
                             <Badge color="#FFA800" bgColor="#FFF4DE">
                               {arrival.status}
@@ -199,8 +204,8 @@ const Reports = () => {
                             </Badge>
                           )}
                         </Box>
-                      </td>
-                      <td>
+                      </Td>
+                      <Td>
                         <Flex>
                           <Box
                             display="flex"
@@ -211,7 +216,6 @@ const Reports = () => {
                             pl="9.25px"
                             w="auto"
                             h="32px"
-                            ml="40px"
                             cursor="pointer"
                           >
                             <Collections color="#3699FF" />
@@ -245,15 +249,15 @@ const Reports = () => {
                             <Trash />
                           </Box>
                         </Flex>
-                      </td>
-                    </tr>
+                      </Td>
+                    </Tr>
                   ))}
-                </tbody>
-              </table>
-            </div>
+                </Tbody>
+              </Table>
+            </TableContainer>
           </Box>
         </Box>
-      </Grid>
+      </Flex>
     </div>
   );
 };
