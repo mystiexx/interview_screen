@@ -36,9 +36,12 @@
   border-bottom: none;
 }
 
+.scroll {
+  overflow-x: auto;
+}
+
 .arrival_table {
   width: 100%;
-  overflow-x: auto;
   border-collapse: collapse;
 }
 

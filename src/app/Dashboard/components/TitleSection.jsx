@@ -6,6 +6,7 @@ const days = ["Today", "Month", "Year"];
 
 const TitleSection = () => {
   const [active, setActive] = useState("Today");
+
   return (
     <div>
       <Box bg="#fff" borderTop={"2px solid #EEEFF3"} pt="11px" pb="11px">

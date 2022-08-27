@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../styles.module.css";
 import { Flex, Text, Box, Button, Image } from "@chakra-ui/react";
 import Badge from "../../../components/Badge";
-import { faker } from "@faker-js/faker";
 
 const head = [
   "Client",
@@ -14,9 +13,9 @@ const head = [
 ];
 
 const Table = ({ clients }) => {
-  const image = faker.image.people();
+  
   return (
-    <div>
+    <div className={styles.scroll}>
       <table className={styles.table}>
         <thead>
           <tr className={styles.table_head}>
@@ -33,10 +32,8 @@ const Table = ({ clients }) => {
                 <Flex>
                   <Box>
                     <Image
-                      w="50px"
-                      h="50px"
                       borderRadius="6px"
-                      src={image}
+                      src={client?.image}
                       alt="people"
                     />
                   </Box>

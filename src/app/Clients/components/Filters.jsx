@@ -3,14 +3,17 @@ import {
   Box,
   Text,
   Input,
-  Flex,
+  Grid,
   InputGroup,
   InputRightElement,
   Select,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import Search from "../../../assets/icons/Search";
 
 const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+
   return (
     <div>
       <Box
@@ -18,10 +21,14 @@ const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
         bg="#fff"
         pt="20px"
         pl="30px"
+        pr="30px"
         pb="36px"
         mt="24px"
       >
-        <Flex>
+        <Grid
+          templateColumns={isNotSmallerScreen ? "repeat(4,1fr)" : "auto"}
+          gap={6}
+        >
           <Box>
             <Text fontSize="13px" fontWeight="600">
               Name
@@ -38,7 +45,7 @@ const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
             </InputGroup>
           </Box>
 
-          <Box ml="16px">
+          <Box>
             <Text fontSize="13px" fontWeight="600">
               Email
             </Text>
@@ -54,7 +61,7 @@ const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
             </InputGroup>
           </Box>
 
-          <Box ml="16px">
+          <Box>
             <Text fontSize="13px" fontWeight="600">
               Date Created
             </Text>
@@ -69,7 +76,7 @@ const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
             />
           </Box>
 
-          <Box ml="16px">
+          <Box>
             <Text fontSize="13px" fontWeight="600">
               Status
             </Text>
@@ -87,7 +94,7 @@ const Filters = ({ onSearchEmail, onSearchName, onFilter, filter, onDate }) => {
               ))}
             </Select>
           </Box>
-        </Flex>
+        </Grid>
       </Box>
     </div>
   );
