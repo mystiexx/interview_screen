@@ -9,15 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: scroll;
 }
 
-
-@media only screen and (min-width: 600px) {
-  body {
-   overflow-y: hidden;
-  }
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -54,4 +47,11 @@ code {
   width: 50px;
   background-color: #ccc;
   -webkit-border-radius: 3px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+   overflow-y: scroll;
+  }
 }

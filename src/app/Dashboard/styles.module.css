@@ -92,3 +92,35 @@
   background-position: bottom;
   background-color: #fff;
 }
+
+.table_section {
+  overflow: auto;
+}
+
+.table_section table {
+  width: 100%;
+  table-layout: fixed;
+  /* min-width: 900px; */
+  border-collapse: collapse;
+}
+
+.table_section table td {
+  padding-top: 13px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.inner_card {
+  background-color: #F64E60;
+  border-bottom-right-radius: 12px ;
+  border-top-right-radius: 12px ;
+  border-bottom-left-radius: 12px ;
+  border-top-left-radius: 12px ;
+  height: 242px;
+  background-image: url("../../assets/images/inner_card.png");
+  background-repeat: no-repeat;
+  background-size: center;
+  background-position: bottom;
+}

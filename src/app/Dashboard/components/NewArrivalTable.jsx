@@ -1,11 +1,20 @@
 import React from "react";
-import { Box, Text, Flex, Image, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  Image,
+  Button,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import styles from "../styles.module.css";
 import { new_arrival_members } from "../data";
 
 const head = ["Products", "earnings", "comission", "compnay", "rating", ""];
 
 const NewArrivalTable = () => {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+
   return (
     <div>
       <Box
@@ -21,8 +30,10 @@ const NewArrivalTable = () => {
           justifyContent="space-between"
           alignContent="center"
           alignItems="center"
+          flexDirection={isNotSmallerScreen ? "row" : "column"}
+          w="100%"
         >
-          <Box>
+          <Box w="100%">
             <Text color="#212121" fontSize="18px" fontWeight="500">
               New Arrivals
             </Text>
@@ -30,7 +41,13 @@ const NewArrivalTable = () => {
               More than 400+ new members
             </Text>
           </Box>
-          <Flex alignItems="center" alignContent="center">
+          <Flex
+            justifyContent="flex-end"
+            alignItems="center"
+            alignContent="center"
+            w="100%"
+            mt={isNotSmallerScreen ? null : "20px"}
+          >
             <Button
               bg="#3699FF"
               color="#fff"
