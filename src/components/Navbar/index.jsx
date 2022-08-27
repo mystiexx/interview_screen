@@ -1,10 +1,12 @@
 import React from "react";
-import { Box, Flex, Container, Text } from "@chakra-ui/react";
+import { Box, Flex, Container, Text,  } from "@chakra-ui/react";
 import Search from "../../assets/icons/Search";
 import Compiling from "../../assets/icons/Compiling";
 import Notification from "../../assets/icons/Notification";
 
 const NavBar = () => {
+ 
+
   return (
     <div>
       <Box bg="#FFFFFF" pt="14px" pb="16px">

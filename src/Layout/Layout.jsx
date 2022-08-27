@@ -9,14 +9,21 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Box>
-        <Grid
-          templateColumns={isNotSmallerScreen ? "265px auto" : "auto"}
-          transition="0.5s ease-in"
-        >
-          <Box display={isNotSmallerScreen ? "block" : "none"}>
-            <SideBar />
-          </Box>
+        {isNotSmallerScreen ? (
+          <Grid templateColumns={"265px auto"}>
+            <Box>
+              <SideBar />
+            </Box>
+            <Box w="auto">
+              <NavBar />
+              <Box h={"100vh"} overflowY={"scroll"} bg="#EEF0F8">
+                {children}
+              </Box>
+            </Box>
+          </Grid>
+        ) : (
           <Box>
+            {" "}
             <NavBar />
             <Box
               h={isNotSmallerScreen ? "100vh" : "auto"}
@@ -24,9 +31,9 @@ const Layout = ({ children }) => {
               bg="#EEF0F8"
             >
               {children}
-            </Box>
+            </Box>{" "}
           </Box>
-        </Grid>
+        )}
       </Box>
     </div>
   );

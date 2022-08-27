@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { Box, Flex, Text, Container, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Container,
+  Button,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import FilePlus from "../../../assets/icons/FilePlus";
 
 const days = ["Today", "Month", "Year"];
 
 const TitleSection = () => {
   const [active, setActive] = useState("Today");
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
 
   return (
     <div>
@@ -15,13 +23,22 @@ const TitleSection = () => {
             justifyContent="space-between"
             alignItems="center"
             alignContent="center"
+            flexDirection={isNotSmallerScreen ? "row" : "column"}
           >
-            <Box>
-              <Flex alignItems="center" alignContent="center">
+            <Box w='100%'>
+              <Flex
+                alignItems="center"
+                alignContent="center"
+                justifyContent={isNotSmallerScreen ? null : "space-between"}
+              >
                 <Text fontSize="20px" fontWeight="600">
                   Clients
                 </Text>
-                <Text color="#EBEDF2" ml=" 42px" mr="14px">
+                <Text
+                  color="#EBEDF2"
+                  ml={isNotSmallerScreen ? " 42px" : null}
+                  mr={isNotSmallerScreen ? "14px" : null }
+                >
                   |
                 </Text>
                 <Text fontSize="13px" color="#959CB6" fontWeight="500">
@@ -41,7 +58,7 @@ const TitleSection = () => {
               </Flex>
             </Box>
 
-            <Box>
+            <Box mt={isNotSmallerScreen ? null : "20px"}>
               <Flex>
                 {days.map((day, id) => (
                   <Box
