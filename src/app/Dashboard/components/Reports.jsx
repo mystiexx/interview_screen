@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text, Flex, Grid, Image } from "@chakra-ui/react";
+import { Box, Text, Flex, Grid, Image, useMediaQuery } from "@chakra-ui/react";
 import { new_arrivals, sales_progress } from "../data";
 import styles from "../styles.module.css";
 import Badge from "../../../components/Badge";
@@ -12,9 +12,15 @@ const time = ["month", "week", "day"];
 
 const Reports = () => {
   const [active, setActive] = useState("day");
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+
   return (
     <div>
-      <Grid templateColumns="372px auto" gap={6} mt="30px">
+      <Grid
+        templateColumns={isNotSmallerScreen ? "372px auto" : "auto"}
+        gap={6}
+        mt="30px"
+      >
         {/* sales progress card */}
         <Box
           bg="#FFFFFF"
@@ -108,136 +114,140 @@ const Reports = () => {
             </Flex>
           </Flex>
           <Box mt="24px">
-            <table className={styles.arrival_table}>
-              <tbody>
-                {new_arrivals.map((arrival) => (
-                  <tr key={arrival.id}>
-                    <td>
-                      <Flex>
-                        <Box
-                          bg="#F3F6F9"
-                          p="4px"
-                          borderRadius="6px"
-                          w="auto"
-                          h="50px"
-                          display="flex"
-                          placeItems="center"
-                        >
-                          <Image
+            <div className={styles.scroll}>
+              <table className={styles.arrival_table}>
+                <tbody>
+                  {new_arrivals.map((arrival) => (
+                    <tr key={arrival.id}>
+                      <td>
+                        <Flex>
+                          <Box
+                            bg="#F3F6F9"
+                            p="4px"
                             borderRadius="6px"
-                            src={arrival.image}
-                            alt="people"
-                          />
-                        </Box>
-                        <Box ml="15px">
-                          <Text
-                            fontSize="14px"
-                            fontWeight="600"
-                            color="#464E5F"
+                            w="auto"
+                            h="50px"
+                            display="flex"
+                            placeItems="center"
                           >
-                            {arrival.name}
-                          </Text>
-                          <Text
-                            color="#B5B5C3"
-                            fontSize="13px"
-                            fontWeight="500"
+                            <Image
+                              w="100%"
+                              h="auto"
+                              borderRadius="6px"
+                              src={arrival.image}
+                              alt="people"
+                            />
+                          </Box>
+                          <Box ml="15px">
+                            <Text
+                              fontSize="14px"
+                              fontWeight="600"
+                              color="#464E5F"
+                            >
+                              {arrival.name}
+                            </Text>
+                            <Text
+                              color="#B5B5C3"
+                              fontSize="13px"
+                              fontWeight="500"
+                            >
+                              <strong style={{ color: "#464E5F" }}>FTP:</strong>{" "}
+                              {arrival.email}
+                            </Text>
+                          </Box>
+                        </Flex>
+                      </td>
+                      <td>
+                        <Text
+                          fontSize="14px"
+                          fontWeight="600"
+                          textAlign="right"
+                          color="#464E5F"
+                        >
+                          {arrival.price.amount}
+                        </Text>
+                        <Text
+                          color="#B5B5C3"
+                          textTransform={"capitalize"}
+                          fontSize="13px"
+                          fontWeight="500"
+                          textAlign="right"
+                        >
+                          {arrival.price.status}
+                        </Text>
+                      </td>
+                      <td>
+                        <Box ml="50px">
+                          {arrival.status === "in progress" ? (
+                            <Badge color="#FFA800" bgColor="#FFF4DE">
+                              {arrival.status}
+                            </Badge>
+                          ) : arrival.status === "approved" ? (
+                            <Badge bgColor="#EEE5FF" color="#8950FC">
+                              {arrival.status}
+                            </Badge>
+                          ) : arrival.status === "success" ? (
+                            <Badge bgColor="#C9F7F5" color="#1BC5BD">
+                              {arrival.status}
+                            </Badge>
+                          ) : (
+                            <Badge bgColor="#FED6DA" color="#F64E60">
+                              {arrival.status}
+                            </Badge>
+                          )}
+                        </Box>
+                      </td>
+                      <td>
+                        <Flex>
+                          <Box
+                            display="flex"
+                            placeItems="center"
+                            bg="#F3F6F9"
+                            borderRadius="6px"
+                            pr="9.25px"
+                            pl="9.25px"
+                            w="auto"
+                            h="32px"
+                            ml="40px"
+                            cursor="pointer"
                           >
-                            <strong style={{ color: "#464E5F" }}>FTP:</strong>{" "}
-                            {arrival.email}
-                          </Text>
-                        </Box>
-                      </Flex>
-                    </td>
-                    <td>
-                      <Text
-                        fontSize="14px"
-                        fontWeight="600"
-                        textAlign="right"
-                        color="#464E5F"
-                      >
-                        {arrival.price.amount}
-                      </Text>
-                      <Text
-                        color="#B5B5C3"
-                        textTransform={"capitalize"}
-                        fontSize="13px"
-                        fontWeight="500"
-                        textAlign="right"
-                      >
-                        {arrival.price.status}
-                      </Text>
-                    </td>
-                    <td>
-                      <Box ml="50px">
-                        {arrival.status === "in progress" ? (
-                          <Badge color="#FFA800" bgColor="#FFF4DE">
-                            {arrival.status}
-                          </Badge>
-                        ) : arrival.status === "approved" ? (
-                          <Badge bgColor="#EEE5FF" color="#8950FC">
-                            {arrival.status}
-                          </Badge>
-                        ) : arrival.status === "success" ? (
-                          <Badge bgColor="#C9F7F5" color="#1BC5BD">
-                            {arrival.status}
-                          </Badge>
-                        ) : (
-                          <Badge bgColor="#FED6DA" color="#F64E60">
-                            {arrival.status}
-                          </Badge>
-                        )}
-                      </Box>
-                    </td>
-                    <td>
-                      <Flex>
-                        <Box
-                          display="flex"
-                          placeItems="center"
-                          bg="#F3F6F9"
-                          borderRadius="6px"
-                          pr="9.25px"
-                          pl="9.25px"
-                          w="auto"
-                          h="32px"
-                          ml="40px"
-                          cursor="pointer"
-                        >
-                          <Collections color="#3699FF" />
-                        </Box>
-                        <Box
-                          display="flex"
-                          placeItems="center"
-                          bg="#F3F6F9"
-                          borderRadius="6px"
-                          pr="9.25px"
-                          pl="9.25px"
-                          w="auto"
-                          h="32px"
-                          ml="10px"
-                          cursor="pointer"
-                        >
-                          <Write />
-                        </Box>
-                        <Box
-                          display="flex"
-                          placeItems="center"
-                          bg="#F3F6F9"
-                          borderRadius="6px"
-                          pr="9.25px"
-                          pl="9.25px"
-                          w="auto"
-                          h="32px"
-                          ml="10px"
-                          cursor="pointer"
-                        >
-                          <Trash />
-                        </Box>
-                      </Flex>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                            <Collections color="#3699FF" />
+                          </Box>
+                          <Box
+                            display="flex"
+                            placeItems="center"
+                            bg="#F3F6F9"
+                            borderRadius="6px"
+                            pr="9.25px"
+                            pl="9.25px"
+                            w="auto"
+                            h="32px"
+                            ml="10px"
+                            cursor="pointer"
+                          >
+                            <Write />
+                          </Box>
+                          <Box
+                            display="flex"
+                            placeItems="center"
+                            bg="#F3F6F9"
+                            borderRadius="6px"
+                            pr="9.25px"
+                            pl="9.25px"
+                            w="auto"
+                            h="32px"
+                            ml="10px"
+                            cursor="pointer"
+                          >
+                            <Trash />
+                          </Box>
+                        </Flex>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </Box>
         </Box>
       </Grid>

@@ -12,7 +12,7 @@ const TitleCard = ({ onDownload }) => {
           alignItems="center"
           alignContent="center"
         >
-          <Text fontSize="32px" fontWeight="600">
+          <Text fontSize="32px" fontWeight="600" textAlign="left">
             Clients
           </Text>
           <Box>

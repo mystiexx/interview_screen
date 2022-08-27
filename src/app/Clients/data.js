@@ -1,6 +1,19 @@
+import user1 from "../../assets/images/user_1.png";
+import user2 from "../../assets/images/user_2.png";
+import user3 from "../../assets/images/user_3.png";
+import user4 from "../../assets/images/user_4.png";
+import user5 from "../../assets/images/user_5.png";
+import user6 from "../../assets/images/user_6.png";
+import user7 from "../../assets/images/user_7.png";
+import user8 from "../../assets/images/user_8.png";
+import user9 from "../../assets/images/user_9.png";
+import user10 from "../../assets/images/user_10.png";
+
+
 export const clientData = [
   {
     id: 1,
+    image: user1,
     name: "Joshua Damilare",
     email: "c.obilor@gmail.com",
     loan_officer: "Usman Yakubu",
@@ -11,6 +24,7 @@ export const clientData = [
   },
   {
     id: 2,
+    image: user2,
     name: "Ekaete Clement",
     email: "mo.yusuf@gmail.com",
     loan_officer: "Chinedu Ejike",
@@ -21,6 +35,7 @@ export const clientData = [
   },
   {
     id: 3,
+    image: user3,
     name: "Ikenna Paul",
     email: "usman.yak@mail.com",
     loan_officer: "Victor James",
@@ -31,6 +46,7 @@ export const clientData = [
   },
   {
     id: 4,
+    image: user4,
     name: "ThankGod Iniobong",
     email: "farouk987@gmail.com",
     loan_officer: "Mohammed Yusuf",
@@ -41,6 +57,7 @@ export const clientData = [
   },
   {
     id: 5,
+    image: user5,
     name: "Sandra Eze",
     email: "mo.yusuf@gmail.com",
     loan_officer: "Kelechi Nwosu",
@@ -51,6 +68,7 @@ export const clientData = [
   },
   {
     id: 6,
+    image: user6,
     name: "Faruq Aminu",
     email: "c.obilor@gmail.com",
     loan_officer: "Adunoluwa Adeyemi",
@@ -61,6 +79,7 @@ export const clientData = [
   },
   {
     id: 7,
+    image: user7,
     name: "Goodluck Jonathan",
     email: "usman.yak@mail.com",
     loan_officer: "Chineye Obaseki",
@@ -71,6 +90,7 @@ export const clientData = [
   },
   {
     id: 8,
+    image: user8,
     name: "Solomon Effiong",
     email: "daniels_kunle78@hotmail.com",
     loan_officer: "Tope Orodeji",
@@ -81,6 +101,7 @@ export const clientData = [
   },
   {
     id: 9,
+    image: user8,
     name: "Solomon Effiong",
     email: "daniels_kunle78@hotmail.com",
     loan_officer: "Tope Orodeji",
@@ -91,6 +112,7 @@ export const clientData = [
   },
   {
     id: 10,
+    image: user9,
     name: "Osazie Collins",
     email: "rennyoni@yahoo.com",
     loan_officer: "Vivian Aguoma",
@@ -101,6 +123,7 @@ export const clientData = [
   },
   {
     id: 11,
+    image: user10,
     name: "Johnson Mbong",
     email: "mo.yusuf@gmail.com",
     loan_officer: "Oluchi Uzo",

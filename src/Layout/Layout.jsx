@@ -1,27 +1,28 @@
-import React, { useState } from "react";
-import { Box, Grid } from "@chakra-ui/react";
+import React from "react";
+import { Box, Grid, useMediaQuery } from "@chakra-ui/react";
 import NavBar from "../components/Navbar";
 import SideBar from "../components/SideBar";
 
 const Layout = ({ children }) => {
-  const [shrink, setShrink] = useState(true);
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
 
-  const onShrink = () => {
-    setShrink(!shrink);
-  };
   return (
     <div>
       <Box>
         <Grid
-          templateColumns={shrink ? "265px auto" : "65px auto"}
+          templateColumns={isNotSmallerScreen ? "265px auto" : "auto"}
           transition="0.5s ease-in"
         >
-          <Box>
-            <SideBar onShrink={onShrink} shrink={shrink} />
+          <Box display={isNotSmallerScreen ? "block" : "none"}>
+            <SideBar />
           </Box>
           <Box>
             <NavBar />
-            <Box h="100vh" overflowY={"scroll"} bg="#EEF0F8">
+            <Box
+              h={isNotSmallerScreen ? "100vh" : "auto"}
+              overflowY={"scroll"}
+              bg="#EEF0F8"
+            >
               {children}
             </Box>
           </Box>

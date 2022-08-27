@@ -57,110 +57,122 @@ const NewArrivalTable = () => {
           </Flex>
         </Flex>
         <Box mt="24px">
-          <table className={styles.table}>
-            <thead>
-              <tr className={styles.table_head}>
-                {head.map((data, id) => (
-                  <th key={id}>{data}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {new_arrival_members.map((members) => (
-                <tr key={members.id}>
-                  <td>
-                    <Flex>
-                      <Box
-                        bg="#F3F6F9"
-                        p="4px"
-                        borderRadius="6px"
-                        w="auto"
-                        h="50px"
-                        display="flex"
-                        placeItems="center"
-                      >
-                        <Image
-                          borderRadius="6px"
-                          src={members.user}
-                          alt="people"
-                        />
-                      </Box>
-                      <Box ml="15px">
-                        <Text fontSize="14px" fontWeight="600" color="#464E5F">
-                          {members.name}
-                        </Text>
-                        <Text color="#B5B5C3" fontSize="13px" fontWeight="500">
-                          {members.stack}
-                        </Text>
-                      </Box>
-                    </Flex>
-                  </td>
-                  <td>
-                    <Text fontSize="14px" fontWeight="600" color="#464E5F">
-                      {members.earn.amount}
-                    </Text>
-                    <Text
-                      color="#B5B5C3"
-                      textTransform={"capitalize"}
-                      fontSize="13px"
-                      fontWeight="500"
-                    >
-                      {members.earn.status}
-                    </Text>
-                  </td>
-                  <td>
-                    <Text fontSize="14px" fontWeight="600" color="#464E5F">
-                      {members.commission.amount}
-                    </Text>
-                    <Text
-                      color="#B5B5C3"
-                      textTransform={"capitalize"}
-                      fontSize="13px"
-                      fontWeight="500"
-                    >
-                      {members.commission.status}
-                    </Text>
-                  </td>
-                  <td>
-                    <Text fontSize="14px" fontWeight="600" color="#464E5F">
-                      {members.company.name}
-                    </Text>
-                    <Text
-                      color="#B5B5C3"
-                      textTransform={"capitalize"}
-                      fontSize="13px"
-                      fontWeight="500"
-                    >
-                      {members.company.type}
-                    </Text>
-                  </td>
-                  <td>
-                    <Text
-                      color="#B5B5C3"
-                      textTransform={"capitalize"}
-                      fontSize="13px"
-                      fontWeight="500"
-                    >
-                      {members.rating}
-                    </Text>
-                  </td>
-                  <td>
-                    <Button
-                      bg="#C9F7F5"
-                      color="#1BC5BD"
-                      fontSize="12px"
-                      fontWeight="600"
-                      _hover={{
-                        background: "#C9F7F5",
-                      }}
-                    >
-                      View Offer
-                    </Button>
-                  </td>
+          <div className={styles.scroll}>
+            <table className={styles.table}>
+              <thead>
+                <tr className={styles.table_head}>
+                  {head.map((data, id) => (
+                    <th key={id}>{data}</th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {new_arrival_members.map((members) => (
+                  <tr key={members.id}>
+                    <td>
+                      <Flex>
+                        <Box
+                          w="auto"
+                          h="50px"
+                          bg="#F3F6F9"
+                          p="4px"
+                          borderRadius="6px"
+                          display="flex"
+                          placeItems="center"
+                        >
+                          <Image
+                            w="100%"
+                            h="auto"
+                            borderRadius="6px"
+                            src={members.user}
+                            alt="people"
+                          />
+                        </Box>
+                        <Box ml="15px">
+                          <Text
+                            fontSize="14px"
+                            fontWeight="600"
+                            color="#464E5F"
+                          >
+                            {members.name}
+                          </Text>
+                          <Text
+                            color="#B5B5C3"
+                            fontSize="13px"
+                            fontWeight="500"
+                          >
+                            {members.stack}
+                          </Text>
+                        </Box>
+                      </Flex>
+                    </td>
+                    <td>
+                      <Text fontSize="14px" fontWeight="600" color="#464E5F">
+                        {members.earn.amount}
+                      </Text>
+                      <Text
+                        color="#B5B5C3"
+                        textTransform={"capitalize"}
+                        fontSize="13px"
+                        fontWeight="500"
+                      >
+                        {members.earn.status}
+                      </Text>
+                    </td>
+                    <td>
+                      <Text fontSize="14px" fontWeight="600" color="#464E5F">
+                        {members.commission.amount}
+                      </Text>
+                      <Text
+                        color="#B5B5C3"
+                        textTransform={"capitalize"}
+                        fontSize="13px"
+                        fontWeight="500"
+                      >
+                        {members.commission.status}
+                      </Text>
+                    </td>
+                    <td>
+                      <Text fontSize="14px" fontWeight="600" color="#464E5F">
+                        {members.company.name}
+                      </Text>
+                      <Text
+                        color="#B5B5C3"
+                        textTransform={"capitalize"}
+                        fontSize="13px"
+                        fontWeight="500"
+                      >
+                        {members.company.type}
+                      </Text>
+                    </td>
+                    <td>
+                      <Text
+                        color="#B5B5C3"
+                        textTransform={"capitalize"}
+                        fontSize="13px"
+                        fontWeight="500"
+                      >
+                        {members.rating}
+                      </Text>
+                    </td>
+                    <td>
+                      <Button
+                        bg="#C9F7F5"
+                        color="#1BC5BD"
+                        fontSize="12px"
+                        fontWeight="600"
+                        _hover={{
+                          background: "#C9F7F5",
+                        }}
+                      >
+                        View Offer
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </Box>
       </Box>
     </div>

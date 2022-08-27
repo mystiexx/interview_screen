@@ -1,13 +1,20 @@
 import React from "react";
-import { Box, Grid, Text, Flex } from "@chakra-ui/react";
+import { Box, Grid, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import Dots from "../../../assets/icons/Dots";
 import styles from "../styles.module.css";
+import Blocks from "../../../assets/icons/Blocks";
+import Cart from "../../../assets/icons/Cart";
 
 const TopSection = () => {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+
   return (
     <div>
       <Box mt="30px">
-        <Grid templateColumns="repeat(3,1fr)" gap={6}>
+        <Grid
+          templateColumns={isNotSmallerScreen ? "repeat(3,1fr)" : "auto"}
+          gap={6}
+        >
           {/* categories card */}
           <Box></Box>
           {/* recent activities card */}
@@ -49,7 +56,17 @@ const TopSection = () => {
                 alignItems={"center"}
                 alignContent="center"
               >
-                <Box>icon</Box>
+                <Box
+                  w="50px"
+                  h="50px"
+                  bg="#C9F7F5"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  borderRadius="9px"
+                >
+                  <Blocks />
+                </Box>
                 <Box>
                   <Text
                     fontSize="24px"
@@ -86,7 +103,17 @@ const TopSection = () => {
                 alignItems={"center"}
                 alignContent="center"
               >
-                <Box>icon</Box>
+                <Box
+                  w="50px"
+                  h="50px"
+                  bg="#E1F0FF"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  borderRadius="9px"
+                >
+                  <Cart />
+                </Box>
                 <Box>
                   <Text
                     fontSize="24px"

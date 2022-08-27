@@ -35,3 +35,7 @@
 .table_body:last-child {
   border-bottom: none;
 }
+
+.scroll {
+  overflow-x: scroll;
+}
