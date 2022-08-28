@@ -7,8 +7,16 @@ import {
   Button,
   useMediaQuery,
 } from "@chakra-ui/react";
-import styles from "../styles.module.css";
 import { new_arrival_members } from "../data";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableContainer,
+} from "@chakra-ui/react";
 
 const head = ["Products", "earnings", "comission", "compnay", "rating", ""];
 
@@ -42,7 +50,7 @@ const NewArrivalTable = () => {
             </Text>
           </Box>
           <Flex
-            justifyContent="flex-end"
+            justifyContent={isNotSmallerScreen ? "flex-end" : "flex-start"}
             alignItems="center"
             alignContent="center"
             w="100%"
@@ -74,32 +82,34 @@ const NewArrivalTable = () => {
           </Flex>
         </Flex>
         <Box mt="24px">
-          <div className={styles.scroll}>
-            <table className={styles.table}>
-              <thead>
-                <tr className={styles.table_head}>
+          <TableContainer
+            overflowX="auto"
+            w={isNotSmallerScreen ? "auto" : "372px"}
+          >
+            <Table variant="unstyled">
+              <Thead>
+                <Tr>
                   {head.map((data, id) => (
-                    <th key={id}>{data}</th>
+                    <Th key={id}>{data}</Th>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
+                </Tr>
+              </Thead>
+              <Tbody>
                 {new_arrival_members.map((members) => (
-                  <tr key={members.id}>
-                    <td>
+                  <Tr key={members.id}>
+                    <Td>
                       <Flex>
                         <Box
-                          w="auto"
+                          w="50px"
                           h="50px"
                           bg="#F3F6F9"
-                          p="4px"
                           borderRadius="6px"
                           display="flex"
-                          placeItems="center"
+                          justifyContent="center"
+                          alignContent="center"
+                          alignItems="center"
                         >
                           <Image
-                            w="100%"
-                            h="auto"
                             borderRadius="6px"
                             src={members.user}
                             alt="people"
@@ -122,8 +132,8 @@ const NewArrivalTable = () => {
                           </Text>
                         </Box>
                       </Flex>
-                    </td>
-                    <td>
+                    </Td>
+                    <Td>
                       <Text fontSize="14px" fontWeight="600" color="#464E5F">
                         {members.earn.amount}
                       </Text>
@@ -135,8 +145,8 @@ const NewArrivalTable = () => {
                       >
                         {members.earn.status}
                       </Text>
-                    </td>
-                    <td>
+                    </Td>
+                    <Td>
                       <Text fontSize="14px" fontWeight="600" color="#464E5F">
                         {members.commission.amount}
                       </Text>
@@ -148,8 +158,8 @@ const NewArrivalTable = () => {
                       >
                         {members.commission.status}
                       </Text>
-                    </td>
-                    <td>
+                    </Td>
+                    <Td>
                       <Text fontSize="14px" fontWeight="600" color="#464E5F">
                         {members.company.name}
                       </Text>
@@ -161,8 +171,9 @@ const NewArrivalTable = () => {
                       >
                         {members.company.type}
                       </Text>
-                    </td>
-                    <td>
+                    </Td>
+                    <Td>
+                      <Image src={members.star} alt="star" />
                       <Text
                         color="#B5B5C3"
                         textTransform={"capitalize"}
@@ -171,8 +182,9 @@ const NewArrivalTable = () => {
                       >
                         {members.rating}
                       </Text>
-                    </td>
-                    <td>
+                    </Td>
+                    <Td>
+                      {" "}
                       <Button
                         bg="#C9F7F5"
                         color="#1BC5BD"
@@ -184,12 +196,12 @@ const NewArrivalTable = () => {
                       >
                         View Offer
                       </Button>
-                    </td>
-                  </tr>
+                    </Td>
+                  </Tr>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </Tbody>
+            </Table>
+          </TableContainer>
         </Box>
       </Box>
     </div>

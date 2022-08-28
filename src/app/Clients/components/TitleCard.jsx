@@ -1,9 +1,11 @@
 import React from "react";
-import { Box, Button, Text, Flex } from "@chakra-ui/react";
+import { Box, Button, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import Export from "../../../assets/icons/Export";
 import AddUser from "../../../assets/icons/AddUser";
 
 const TitleCard = ({ onDownload }) => {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+
   return (
     <div>
       <Box>
@@ -11,11 +13,24 @@ const TitleCard = ({ onDownload }) => {
           justifyContent="space-between"
           alignItems="center"
           alignContent="center"
+          flexDirection={isNotSmallerScreen ? "row" : "column"}
         >
-          <Text fontSize="32px" fontWeight="600" textAlign="left">
+          <Text
+            fontSize="32px"
+            fontWeight="600"
+            textAlign="left"
+            mt={isNotSmallerScreen ? '24px' : "24px"}
+            w="100%"
+            mb={isNotSmallerScreen ? null : "24px"}
+          >
             Clients
           </Text>
-          <Box>
+          <Box
+            w="100%"
+           
+            display="flex"
+            justifyContent={isNotSmallerScreen ? "flex-end" : "flex-start"}
+          >
             <Flex alignItems="center" alignContent="center">
               <Button
                 leftIcon={<AddUser />}
