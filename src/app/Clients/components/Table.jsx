@@ -13,7 +13,6 @@ const head = [
 ];
 
 const Table = ({ clients }) => {
-  
   return (
     <div className={styles.scroll}>
       <table className={styles.table}>
@@ -30,10 +29,15 @@ const Table = ({ clients }) => {
             <tr key={client.id} className={styles.table_body}>
               <td>
                 <Flex>
-                  <Box>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignContent="center"
+                    alignItems="center"
+                  >
                     <Image
                       borderRadius="6px"
-                      src={client?.image}
+                      src={client.image}
                       alt="people"
                     />
                   </Box>

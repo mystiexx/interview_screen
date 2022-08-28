@@ -4,6 +4,12 @@ import Office from "../../assets/icons/Office";
 import Collections from "../../assets/icons/Collections";
 import Shop from "../../assets/icons/Shop";
 import Email from "../../assets/icons/Email";
+import Report from "../../assets/icons/Report";
+import Application from "../../assets/icons/Application";
+import Remita from "../../assets/icons/Remita";
+import Settings from "../../assets/icons/Settings";
+import Attachment from "../../assets/icons/Attachment";
+
 
 export const routes = [
   {
@@ -70,3 +76,41 @@ export const routes = [
     iconActive: <Email color="#fff" />,
   },
 ];
+
+export const otherRoutes =[
+  {
+    id: 1,
+    title: 'Reports',
+    link: "/reports",
+    icon: <Report/>,
+    iconActive: <Report color='#fff'/>,
+  },
+  {
+    id: 2,
+    title: 'Applications',
+    link: "/applications",
+    icon: <Application/>,
+    iconActive: <Application color='#fff'/>
+  },
+  {
+    id: 3,
+    title: 'Remita',
+    link: "/remita",
+    icon: <Remita/>,
+    iconActive: <Remita color='#fff'/>
+  },
+  {
+    id: 4,
+    title: 'Workflows',
+    link: "/workflows",
+    icon: <Attachment color='#EB8376'/>,
+    iconActive: <Attachment color='#fff'/>
+  },
+  {
+    id: 5,
+    title: 'Settings',
+    link: "/settings",
+    icon: <Settings/>,
+    iconActive: <Settings color='#fff'/>
+  },
+]

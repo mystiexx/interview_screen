@@ -101,7 +101,7 @@ export const clientData = [
   },
   {
     id: 9,
-    image: user8,
+    image: user9,
     name: "Solomon Effiong",
     email: "daniels_kunle78@hotmail.com",
     loan_officer: "Tope Orodeji",

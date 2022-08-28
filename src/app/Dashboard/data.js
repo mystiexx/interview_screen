@@ -10,6 +10,8 @@ import plurk from "../../assets/images/plurk.png";
 import telegram from "../../assets/images/telegram.png";
 import cisco from "../../assets/images/cisco.png";
 import bebo from "../../assets/images/bebo.png";
+import full from "../../assets/images/full_star.png";
+import half from "../../assets/images/half_star.png";
 
 export const sales_progress = [
   {
@@ -59,6 +61,7 @@ export const new_arrival_members = [
     commission: { amount: "$520", status: "paid" },
     company: { name: "Intertico", type: "Web, UI/UX Design" },
     rating: "Best Rated",
+    star: full,
   },
   {
     id: 2,
@@ -69,6 +72,7 @@ export const new_arrival_members = [
     commission: { amount: "$1,600", status: "rejected" },
     company: { name: "Agoda", type: "Houses & Hotels" },
     rating: "Above Average",
+    star: half,
   },
   {
     id: 3,
@@ -79,6 +83,7 @@ export const new_arrival_members = [
     commission: { amount: "$6,700", status: "paid" },
     company: { name: "RoadGee", type: "Transportation+" },
     rating: "Best Rated",
+    star: full,
   },
 ];
 

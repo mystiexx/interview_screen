@@ -16,6 +16,7 @@ const Float = () => {
         pt="10px"
         pb="10px"
         pl="7px"
+        zIndex='30'
         pr="9px"
        
         boxShadow={"-25px 0px 30px rgba(0, 0, 0, 0.02);"}
