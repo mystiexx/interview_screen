@@ -20,7 +20,7 @@ const Mobile = ({ toggle }) => {
 
   return (
     <div>
-      <Box bg="#1e1e2d" h="100vh" onClick={toggle} overflowY="scroll">
+      <Box bg="#1e1e2d" h="100vh"  overflowY="scroll">
         <Box pt="14px" pb={"20px"} bg="#1B1B28" pl="27px" pr={"25px"}>
           <Flex
             placeItems={"none"}
