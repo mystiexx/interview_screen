@@ -57,7 +57,7 @@
 
 .accordion {
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   padding-left: 20px;
   display: flex;
   justify-content: space-between;
@@ -65,20 +65,23 @@
   align-content: center;
   transition: background-color 0.6s ease;
   font-size: 13px;
+  width: 100%;
 }
 
 .accordion_active {
   background: #d54a39;
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   padding-left: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  transition: background-color 0.6s ease;
+  transition: background 0.6s ease;
   color: #fff;
   font-size: 13px;
+  width: 100%;
+
 }
 
 .accordion_content {
