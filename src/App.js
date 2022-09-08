@@ -8,7 +8,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/clients" element={<Clients />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>

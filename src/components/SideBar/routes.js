@@ -15,7 +15,7 @@ export const routes = [
   {
     id: 1,
     title: "Dashboard",
-    link: "/",
+    link: "/dashboard",
     icon: <Dashboard color="#D54A39" />,
     iconActive: <Dashboard />,
   },
@@ -53,6 +53,12 @@ export const routes = [
     link: "/office",
     icon: <Office />,
     iconActive: <Office color="#fff" />,
+    sub_routes: [
+      {
+        name: "All Client",
+        link: "/clients/all",
+      },
+    ]
   },
   {
     id: 5,
@@ -60,6 +66,12 @@ export const routes = [
     link: "/collections",
     icon: <Collections />,
     iconActive: <Collections color="#fff" />,
+    sub_routes: [
+      {
+        name: "All Collections",
+        link: "/clients/all",
+      },
+    ]
   },
   {
     id: 6,
