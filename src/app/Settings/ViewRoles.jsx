@@ -13,6 +13,7 @@ import { roles } from "./data";
 import RolesCard from "./components/RolesCard";
 import RolesTable from "./components/RolesTable";
 import BackArrow from "../../assets/icons/BackArrow";
+import { Link } from "react-router-dom";
 
 const ViewRoles = () => {
   const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
@@ -26,13 +27,14 @@ const ViewRoles = () => {
             alignItems="center"
             alignContent="center"
           >
-            <Flex alignItems='center'>
-            <BackArrow/>
-            <Text fontSize="32px" fontWeight="600" ml='16px'>
-              View Role
-            </Text>
-            </Flex>
-           
+            <Link to="/settings">
+              <Flex alignItems="center">
+                <BackArrow />
+                <Text fontSize="32px" fontWeight="600" ml="16px">
+                  View Role
+                </Text>
+              </Flex>
+            </Link>
 
             <Button
               leftIcon={<Trash color="#fff" />}
