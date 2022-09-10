@@ -99,7 +99,7 @@ const Mobile = ({ toggle }) => {
                     {({ isExpanded }) => (
                       <>
                         <NavLink
-                          to={route.link}
+                          to={route?.link}
                           className={({ isActive }) =>
                             isActive
                               ? styles.accordion_active
@@ -119,10 +119,10 @@ const Mobile = ({ toggle }) => {
                               fontSize="13px"
                             >
                               <Box mr={3}>
-                                {route.link === location.pathname
+                                {route?.link === location?.pathname
                                   ? route.iconActive
-                                  : route.link.includes(
-                                      location.pathname.split("/")[1]
+                                  : route?.link?.includes(
+                                      location?.pathname.split("/")[1]
                                     )
                                   ? route.icon
                                   : route.icon}
