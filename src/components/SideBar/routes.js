@@ -69,7 +69,15 @@ export const routes = [
     sub_routes: [
       {
         name: "All Collections",
-        link: "/clients/all",
+        link: "/collections/all",
+      },
+      {
+        name: "Bulk Collection",
+        link: "/collections/bulk",
+      },
+      {
+        name: "Collection Bulk",
+        link: "/collections/bank",
       },
     ]
   },
@@ -123,6 +131,20 @@ export const otherRoutes =[
     title: 'Settings',
     link: "/settings",
     icon: <Settings/>,
-    iconActive: <Settings color='#fff'/>
+    iconActive: <Settings color='#fff'/>,
+    sub_routes: [
+      {
+        name: "Roles & Permission",
+        link: "/settings/roles",
+      },
+      {
+        name: "Application Settings",
+        link: "/settings/application",
+      },
+      {
+        name: "Integrations",
+        link: "/settings/integrations",
+      },
+    ]
   },
 ]

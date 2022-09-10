@@ -8,6 +8,9 @@ export const Theme = extendTheme({
         color: "#464E5F",
         fontWeight: 400,
       },
+      colors: {
+        orange: '#F18651'
+      }
     }),
   },
 });
