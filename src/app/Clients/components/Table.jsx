@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles.module.css";
 import { Flex, Text, Box, Button, Image } from "@chakra-ui/react";
 import Badge from "../../../components/Badge";
+import { Link } from "react-router-dom";
 
 const head = [
   "Client",
@@ -35,11 +36,7 @@ const Table = ({ clients }) => {
                     alignContent="center"
                     alignItems="center"
                   >
-                    <Image
-                      borderRadius="6px"
-                      src={client.image}
-                      alt="people"
-                    />
+                    <Image borderRadius="6px" src={client.image} alt="people" />
                   </Box>
                   <Box ml="15px">
                     <Text fontSize="14px" fontWeight="700">
@@ -73,17 +70,19 @@ const Table = ({ clients }) => {
                 )}
               </td>
               <td>
-                <Button
-                  color="#F18651"
-                  bg="#FFF0E8"
-                  fontSize="12px"
-                  fontWeight="600"
-                  _hover={{
-                    background: "#FFF0E8",
-                  }}
-                >
-                  View Client
-                </Button>
+                <Link to={`/clients/${client.id}`}>
+                  <Button
+                    color="#F18651"
+                    bg="#FFF0E8"
+                    fontSize="12px"
+                    fontWeight="600"
+                    _hover={{
+                      background: "#FFF0E8",
+                    }}
+                  >
+                    View Client
+                  </Button>
+                </Link>
               </td>
             </tr>
           ))}

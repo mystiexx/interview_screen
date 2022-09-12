@@ -10,7 +10,8 @@ export const Theme = extendTheme({
       },
       colors: {
         orange: '#F18651'
-      }
+      },
+    
     }),
   },
 });
