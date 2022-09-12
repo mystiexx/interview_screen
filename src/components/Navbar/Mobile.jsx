@@ -64,7 +64,7 @@ const Mobile = ({ toggle }) => {
                                 : route.link.includes(
                                     location.pathname.split("/")[1]
                                   )
-                                ? route.icon
+                                ? route.iconActive
                                 : route.icon}
                             </Box>
                             {route.title}
@@ -124,7 +124,7 @@ const Mobile = ({ toggle }) => {
                                   : route?.link?.includes(
                                       location?.pathname.split("/")[1]
                                     )
-                                  ? route.icon
+                                  ? route.iconActive
                                   : route.icon}
                               </Box>
                               {route.title}

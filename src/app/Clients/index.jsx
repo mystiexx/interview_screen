@@ -88,7 +88,7 @@ const Clients = () => {
     <div>
       <Layout>
         <Container maxW="container.xl" pb="100px">
-          <Box mt="24px">
+          <Box pt="24px">
             <TitleCard onDownload={onDownload} />
             <Filters
               onSearchEmail={onSearchEmail}
