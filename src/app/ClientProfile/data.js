@@ -21,6 +21,29 @@ export const info = [
     },
 ]
 
+export const loanInfo = [
+    {
+        id: 1,
+        title: 'Disbursed Amount',
+        amount: '₦65,000.00'
+    },
+    {
+        id: 2,
+        title: '₦65,000.00',
+        amount: '₦465,000.00'
+    },
+    {
+        id: 3,
+        title: '₦315,000.00',
+        amount: '₦315,000.00'
+    },
+    {
+        id: 4,
+        title: '₦127,250.00',
+        amount: '₦127,250.00'
+    },
+]
+
 export const contacts = [
     {
         id: 1,
@@ -134,5 +157,69 @@ export const application = [
         date: 'February 28, 2018',
         status: 'approved',
         progress: 71,
+    },
+]
+
+export const loan = [
+    {
+        id: 1,
+        invoice_date: '01/01/2022',
+        collection_date: '01/01/2022',
+        amount: '₦97,326.08',
+        status: 'in progress'
+    },
+    {
+        id: 2,
+        invoice_date: '01/01/2022',
+        collection_date: '01/01/2022',
+        amount: '₦97,326.08',
+        status: 'approved'
+    },
+    {
+        id: 3,
+        invoice_date: '01/01/2022',
+        collection_date: '01/01/2022',
+        amount: '₦97,326.08',
+        status: 'approved'
+    },
+    {
+        id: 4,
+        invoice_date: '01/01/2022',
+        collection_date: '01/01/2022',
+        amount: '₦97,326.08',
+        status: 'rejected'
+    },
+]
+
+export const documents = [
+    {
+        id: 1,
+        name: 'Bank Statements'
+    },
+    {
+        id: 2,
+        name: 'Cheques'
+    },
+    {
+        id: 3,
+        name: 'Customer Information'
+    },
+    {
+        id: 4,
+        name: 'LPO'
+    },
+
+    {
+        id: 5,
+        name: 'Offer Letter'
+    },
+
+    {
+        id: 6,
+        name: 'Promissory Note'
+    },
+    {
+        id: 4,
+        name: 'Recent Passport'
     },
 ]

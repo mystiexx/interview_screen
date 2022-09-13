@@ -70,7 +70,7 @@ const SideBar = () => {
                                 : route?.link?.includes(
                                     location.pathname.split("/")[1]
                                   )
-                                ? route.iconActive
+                                ? route.icon
                                 : route.icon}
                             </Box>
                             {route.title}
@@ -131,7 +131,7 @@ const SideBar = () => {
                                   : route?.link?.includes(
                                       location.pathname.split("/")[1]
                                     )
-                                  ? route.iconActive
+                                  ? route.icon
                                   : route.icon}
                               </Box>
                               {route.title}
