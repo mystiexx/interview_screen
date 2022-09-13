@@ -15,6 +15,7 @@ import { application } from "../data";
 import { FiArrowRight } from "react-icons/fi";
 import Badge from "components/Badge";
 import ProgressBar from "components/Progress/ProgressBar";
+import { Link } from "react-router-dom";
 
 const ApplicationTable = () => {
   return (
@@ -79,19 +80,21 @@ const ApplicationTable = () => {
                 )}
               </Td>
               <Td>
-                <Box
-                  w="34px"
-                  h="34px"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  alignContent="center"
-                  bg="#FFEEE7"
-                  mr="8px"
-                  borderRadius="8px"
-                >
-                  <FiArrowRight color="#F18651" />
-                </Box>
+                <Link to={`/application/${data.id}`}>
+                  <Box
+                    w="34px"
+                    h="34px"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    alignContent="center"
+                    bg="#FFEEE7"
+                    mr="8px"
+                    borderRadius="8px"
+                  >
+                    <FiArrowRight color="#F18651" />
+                  </Box>
+                </Link>
               </Td>
             </Tr>
           ))}

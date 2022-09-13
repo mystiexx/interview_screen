@@ -85,26 +85,44 @@ export const roles = [
   },
 ];
 
-
 export const users = [
-    {
-        id: 'G140',
-        user: 'Olabisi Gbolahan',
-        created_at: 'October 24, 2018'
+  {
+    id: "G140",
+    user: "Olabisi Gbolahan",
+    created_at: "October 24, 2018",
+  },
+  {
+    id: "G141",
+    user: "Ekaete Clement",
+    created_at: "August 7, 2017",
+  },
+  {
+    id: "DH5-0010",
+    user: "Ikenna Paul",
+    created_at: "November 16, 2014",
+  },
+  {
+    id: "RO1004",
+    user: "Habibah Aliyu",
+    created_at: "October 30, 2017",
+  },
+];
+
+export const permissions = [
+  {
+    id: 1,
+    name: "Users",
+    value: {
+      write: "write",
+      create: "create",
     },
-    {
-        id: 'G141',
-        user: 'Ekaete Clement',
-        created_at: 'August 7, 2017'
+  },
+  {
+    id: 2,
+    name: "Collections",
+    value: {
+      write: "write",
+      create: "create",
     },
-    {
-        id: 'DH5-0010',
-        user: 'Ikenna Paul',
-        created_at: 'November 16, 2014'
-    },
-    {
-        id: 'RO1004',
-        user: 'Habibah Aliyu',
-        created_at: 'October 30, 2017'
-    },
-]
+  },
+];

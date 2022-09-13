@@ -9,6 +9,7 @@ import CollectionBank from "./app/CollectionBank";
 import Roles from "./app/Settings/Roles";
 import ViewRoles from "./app/Settings/ViewRoles";
 import IncompleteRecords from "app/Clients/IncompleteRecords/IncompleteRecords";
+import ViewApplication from "app/ClientProfile/ViewApplication/ViewApplication";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             element={<IncompleteRecords />}
           />
           <Route exact path="/clients/:id" element={<ClientProfile />} />
+          <Route exact path="/application/:id" element={<ViewApplication />} />
           <Route exact path="/office" element={<Office />} />
           <Route exact path="/collections" element={<Collection />} />
           <Route exact path="/collections/bank" element={<CollectionBank />} />

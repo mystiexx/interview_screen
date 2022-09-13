@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Text,
@@ -12,12 +12,15 @@ import Layout from "../../Layout/Layout";
 import { IoAddOutline } from "react-icons/io5";
 import RolesCard from "./components/RolesCard";
 import { roles } from "./data";
+import CreateRole from "./components/CreateRole";
 
 const Roles = () => {
   const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
+  const [open, setOpen] = useState(false);
 
   return (
     <Layout>
+      <CreateRole isOpen={open} onClose={() => setOpen(!open)} />
       <Container maxW="container.xl" pb="100px">
         <Box pt="24px">
           <Flex
@@ -36,6 +39,7 @@ const Roles = () => {
               color="#fff"
               fontSize="12px"
               fontWeight="600"
+              onClick={() => setOpen(!open)}
               _hover={{ background: "#D54A39" }}
             >
               Create Role
