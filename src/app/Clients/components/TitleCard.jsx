@@ -3,7 +3,7 @@ import { Box, Button, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import Export from "../../../assets/icons/Export";
 import AddUser from "../../../assets/icons/AddUser";
 
-const TitleCard = ({ onDownload }) => {
+const TitleCard = ({ onDownload, onOpen }) => {
   const [isNotSmallerScreen] = useMediaQuery("(min-width: 600px)");
 
   return (
@@ -19,7 +19,7 @@ const TitleCard = ({ onDownload }) => {
             fontSize="32px"
             fontWeight="600"
             textAlign="left"
-            mt={isNotSmallerScreen ? '24px' : "24px"}
+            mt={isNotSmallerScreen ? "24px" : "24px"}
             w="100%"
             mb={isNotSmallerScreen ? null : "24px"}
           >
@@ -27,12 +27,12 @@ const TitleCard = ({ onDownload }) => {
           </Text>
           <Box
             w="100%"
-           
             display="flex"
             justifyContent={isNotSmallerScreen ? "flex-end" : "flex-start"}
           >
             <Flex alignItems="center" alignContent="center">
               <Button
+                onClick={onOpen}
                 leftIcon={<AddUser />}
                 bg="#D54A39"
                 color="#fff"

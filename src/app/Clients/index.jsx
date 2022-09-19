@@ -7,6 +7,7 @@ import Table from "./components/Table";
 import { clientData } from "./data";
 import Pagination from "../../components/Pagination";
 import moment from "moment";
+import CreateClient from "./CreateClient/CreateClient";
 
 const filter = ["in progress", "rejected", "approved"];
 
@@ -17,6 +18,7 @@ const json2csvParser = new Parser({ fields });
 
 const Clients = () => {
   const [clients, setClients] = useState(clientData);
+  const [open, setOpen ] = useState(false)
   
 
   const onDownload = () => {
@@ -87,9 +89,10 @@ const Clients = () => {
   return (
     <div>
       <Layout>
+        <CreateClient isOpen={open} onClose={() => setOpen(!open)}/>
         <Container maxW="container.xl" pb="100px">
           <Box pt="24px">
-            <TitleCard onDownload={onDownload} />
+            <TitleCard onDownload={onDownload} onOpen={()=>setOpen(!open)}/>
             <Filters
               onSearchEmail={onSearchEmail}
               onSearchName={onSearchName}

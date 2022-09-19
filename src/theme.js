@@ -11,6 +11,10 @@ export const Theme = extendTheme({
       colors: {
         orange: '#F18651'
       },
+      input: {
+        background: '#EBF0F5',
+        borderRadius: '9px'
+      }
     
     }),
   },

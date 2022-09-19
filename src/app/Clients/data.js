@@ -133,3 +133,18 @@ export const clientData = [
     created_at: "February 11, 2014",
   },
 ];
+
+export const tabs = [
+  {
+    title: 'Individual',
+    sub: 'A solo enterpreneur with one shop or online store and other things.'
+  },
+  {
+    title: 'Business Individual',
+    sub: 'A solo enterpreneur with one shop or online store and other things.'
+  },
+  {
+    title: 'Corporate',
+    sub: 'A solo enterpreneur with one shop or online store and other things.'
+  }
+]
