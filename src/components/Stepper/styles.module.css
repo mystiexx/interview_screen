@@ -1,0 +1,66 @@
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: #f9e1d7;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #fb814a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selected {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: #F18651;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+  margin-top: 4px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 10px;
+  text-align: center;
+  color: #888c9f;
+}
+
+.sub {
+  font-weight: 400;
+  font-size: 8px;
+  text-align: center;
+  color: #888c9f;
+}
+
+.circle_wrapper {
+  padding: 0px 30px;
+  position: relative;
+}
+
+.step_block:not(:last-child) .circle_wrapper:after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  position: absolute;
+  border-bottom: 1px dashed #cbccd5;
+  top: 0px;
+  left: 70%;
+  bottom: 0px;
+  margin: auto;
+  z-index: -1;
+}
